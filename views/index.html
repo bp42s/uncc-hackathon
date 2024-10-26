@@ -8,6 +8,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Styling -->
     <style>
@@ -24,109 +25,129 @@
             background-color: #F1F2F3;
             color: #2B2B2B;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation Bar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #006747; /* UNCC Dark Green */
-    padding: 10px 20px;
-    color: #FFFFFF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-}
-
-.navbar .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #FFFFFF;
-}
-
-/* New navigation buttons styling */
-.navbar .nav-buttons {
-    display: flex; /* Align buttons horizontally */
-}
-
-.navbar .nav-buttons a {
-    margin: 0 10px; /* Spacing between buttons */
-    padding: 5px 10px; /* Padding for buttons */
-    text-decoration: none;
-    color: #FFFFFF; /* Text color */
-    font-weight: 500;
-    border: 1px solid #C5B783; /* Border around each button */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Transition effects */
-}
-
-.navbar .nav-buttons a:hover {
-    background-color: #C5B783; /* UNCC Gold */
-    color: #2B2B2B; /* Text color on hover */
-}
-
-.navbar .nav-links a {
-    margin: 0 10px;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: 500;
-    border: 1px solid #C5B783; /* Border around each link */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar .nav-links a:hover {
-    background-color: #C5B783; /* UNCC Gold */
-    color: #2B2B2B; /* Text color on hover */
-}
-
-.navbar .search-bar input[type="text"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-size: 1rem;
-    width: 200px;
-}
-
-
-       /* Hero Section */
-       .hero {
-            background-image: url('https://example.com/your-banner-image.jpg');
-            /* Add your image URL */
-            height: 400px;
-            background-size: cover;
-            background-position: center;
+        /* Navbar Styling */
+        .navbar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            background-color: #006747;
+            padding: 10px 20px;
             color: #FFFFFF;
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .logo img {
+            width: 42px;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav-links a {
+            color: #FFFFFF;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar .nav-links a:hover,
+        .navbar .nav-links a.active {
+            background-color: #C5B783;
+            color: #2B2B2B;
+        }
+
+        .search-bar {
             position: relative;
         }
 
+        .search-bar input[type="text"] {
+            padding: 8px 10px 8px 35px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+            font-size: 1rem;
+        }
+
+        .search-bar .fa-search {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 1rem;
+        }
+
+        /* Hero Section with Side Borders */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+            background-color: #006747;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero::before,
         .hero::after {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            /* Dark overlay */
+            width: 10vw;
+            background-color: #006747;
             z-index: 1;
         }
 
-        .hero h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Darker shadow for better contrast */
-    position: relative;
-    z-index: 2;
-    background-color: rgba(198, 183, 131, 0.8); /* Gold color with slight transparency */
-    padding: 10px 20px; /* Add some padding */
-    border-radius: 10px; /* Rounded corners for the background */
+        .hero::before {
+            left: 0;
         }
+
+        .hero::after {
+            right: 0;
+        }
+
+        .hero iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            border: none;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 2;
+            background-color: rgba(198, 183, 131, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
         /* Main Content Styling */
         main {
             padding: 20px;
@@ -138,45 +159,24 @@
             font-size: 2.5rem;
             margin-top: 20px;
             border-bottom: 2px solid #C5B783;
-            /* Underline for section titles */
             padding-bottom: 5px;
             display: inline-block;
             margin-bottom: 20px;
         }
 
-        /* Welcome Message Styling */
-        .welcome-message {
-            font-size: 3rem;
-            /* Large font size */
-            font-weight: bold;
-            color: #FFFFFF;
-            /* White text */
-            background-color: #C5B783;
-            /* Gold background */
-            padding: 20px;
-            border-radius: 10px;
-            /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            /* Subtle shadow */
-            margin-bottom: 30px;
-            /* Space below */
-        }
-
-        /* Trending Section Styling */
+        /* Trending Section */
         .trending-section {
             margin-bottom: 40px;
-            /* Space below section */
         }
 
         .trending-title {
-    font-size: 2.5rem;
-    color: #006747; /* UNCC Dark Green */
-    margin-bottom: 20px; /* Space below title */
-    border-bottom: 2px solid #C5B783; /* Gold underline */
-    padding-bottom: 5px; /* Space below the title text */
-    display: inline-block; /* Make it an inline block */
-    width: 250px; /* Set a width to match the longest title */
-        }  
+            font-size: 2.5rem;
+            color: #006747;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #C5B783;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
 
         .trending-gallery {
             display: flex;
@@ -184,14 +184,12 @@
             justify-content: center;
             gap: 15px;
             padding: 0 20px;
-            /* Add padding for better layout */
         }
 
         .trending-item {
             width: 220px;
             height: 300px;
             background-color: #C5B783;
-            /* Placeholder color */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -200,50 +198,12 @@
             border-radius: 10px;
             font-weight: bold;
             border: 2px solid #006747;
-            /* Border for gallery items */
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .trending-item:hover {
             transform: scale(1.05);
-            /* Slightly enlarge on hover */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            /* Add shadow effect */
-        }
-
-        /* Product Gallery Styling */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-            padding: 0 20px;
-            /* Add padding for better layout */
-        }
-
-        .gallery-item {
-            width: 220px;
-            height: 300px;
-            background-color: #C5B783;
-            /* Placeholder color */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #FFFFFF;
-            border-radius: 10px;
-            font-weight: bold;
-            border: 2px solid #006747;
-            /* Border for gallery items */
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            /* Slightly enlarge on hover */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            /* Add shadow effect */
         }
 
         /* Footer Styling */
@@ -253,7 +213,6 @@
             padding: 15px;
             text-align: center;
             margin-top: 20px;
-            /* Space above footer */
         }
 
         footer p {
@@ -262,98 +221,108 @@
 
         footer a {
             color: #C5B783;
-            /* Gold link color */
             text-decoration: underline;
+            transition: color 0.3s;
         }
 
         footer a:hover {
             text-decoration: none;
             color: #FFFFFF;
-            /* Change color on hover */
+        }
+
+        /* Responsive Navbar Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #FFFFFF;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #006747;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                width: 150px;
+                padding: 10px;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <div class="navbar">
-        <div class="logo">NinerMarket</div>
+        <div class="logo">
+            <img src="https://brand.charlotte.edu/wp-content/uploads/sites/183/2023/04/C_only.png" alt="UNCC Logo">
+            NinerMarket
+        </div>
+        <i class="fas fa-bars menu-toggle"></i>
         <div class="nav-links">
-            <a href="localhost:3000/sell">Sell</a>
-            <a href="localhost:3000/chat">Chat</a>
-            <a href="localhost:3000/sign_up">Sign Up</a>
-            <a href="localhost:3000/account">Account</a>
-            <a href="localhost:3000/about">About</a>
+            <a href="http://localhost:3000/sell">Sell</a>
+            <a href="http://localhost:3000/chat">Chat</a>
+            <a href="http://localhost:3000/sign_up">Sign Up</a>
+            <a href="http://localhost:3000/account">Account</a>
+            <a href="about.html">About</a>
         </div>
         <div class="search-bar">
+            <i class="fas fa-search"></i>
             <input type="text" placeholder="Search...">
         </div>
     </div>
 
-
-    <!-- Hero Section -->
-    <div class="hero" style="position: relative; overflow: hidden;">
+    <!-- Hero Section with Side Borders -->
+    <div class="hero">
         <iframe 
             src="https://www.youtube.com/embed/PtvnjtGefiU?controls=0&showinfo=0&rel=0&autoplay=1&mute=1&loop=1&playlist=PtvnjtGefiU" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen 
-            style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); z-index: 0;"
         ></iframe>
-        <h1 style="position: relative; z-index: 1;">Welcome to NinerMarket</h1>
+        <h1>Welcome to NinerMarket</h1>
     </div>
-
 
     <!-- Main Content -->
     <main>
-
-        <div class="trending-section">
-            <h2 class="trending-title">Trending</h2>
-            <div class="trending-gallery">
-                <div class="trending-item">Trending 1</div>
-                <div class="trending-item">Trending 2</div>
-                <div class="trending-item">Trending 3</div>
-                <div class="trending-item">Trending 4</div>
-                <div class="trending-item">Trending 5</div>
-            </div>
+        <h2 class="section-title">Trending</h2>
+        <div class="trending-gallery">
+            <div class="trending-item">Trending 1</div>
+            <div class="trending-item">Trending 2</div>
+            <div class="trending-item">Trending 3</div>
+            <div class="trending-item">Trending 4</div>
+            <div class="trending-item">Trending 5</div>
         </div>
-
-        <h2 class="section-title">Men's Clothing</h2>
-        <div class="gallery">
-            <div class="gallery-item">Photo 1</div>
-            <div class="gallery-item">Photo 2</div>
-            <div class="gallery-item">Photo 3</div>
-            <div class="gallery-item">Photo 4</div>
-            <div class="gallery-item">Photo 5</div>
-        </div>
-
-        <h2 class="section-title">Women's Clothing</h2>
-        <div class="gallery">
-            <div class="gallery-item">Photo 1</div>
-            <div class="gallery-item">Photo 2</div>
-            <div class="gallery-item">Photo 3</div>
-            <div class="gallery-item">Photo 4</div>
-            <div class="gallery-item">Photo 5</div>
-        </div>
-
-        <h2 class="section-title">Accessories</h2>
-        <div class="gallery">
-            <div class="gallery-item">Photo 1</div>
-            <div class="gallery-item">Photo 2</div>
-            <div class="gallery-item">Photo 3</div>
-            <div class="gallery-item">Photo 4</div>
-            <div class="gallery-item">Photo 5</div>
-        </div>
-
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 NinerMarket. All Rights Reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>&copy; 2024 NinerMarket. All rights reserved.</p>
+        <p>Designed by Hack CLT Team</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
     </footer>
 
-</body>
+    <!-- JavaScript for Responsive Navbar -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
 </html>
