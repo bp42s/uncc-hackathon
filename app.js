@@ -1,22 +1,26 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const Account = require("./models/account");
+const Item = require("./models/item");
 
 
 // express app
 const app = express();
 
-// connection string to mongodb
-const dbURI = "mongodb+srv://program:program@uncc-hackathon.uvolh.mongodb.net";
-//mongoose.connect(dbURI);
+
+// attempt to connect to mdb. listening occurs here
+const dbURI = "mongodb+srv://program:program_password12345@uncc-hackathon.uvolh.mongodb.net/uncc-hackathon";
+mongoose.connect(dbURI)
+    .then((result) => {
+        app.listen(3000);
+        console.log("app: success, listening for requests on port 3000");
+    })
+    .catch((err) => console.log(err));
+
 
 // register view engine - unused
 // app.set("view engine", "ejs");
 
-
-// listen for requests
-app.listen(3000, "localhost", () => {
-    console.log('App: Listening for requests on port 3000');
-});
 
 // middleware - log each request
 app.use((req, res, next) => {
@@ -28,7 +32,83 @@ app.use((req, res, next) => {
 });
 
 
-// requests
+// mongoose and mongo sandbox routes
+app.get("/add-account", (req, res) => {
+    const account = new Account({
+        username: "newUser",
+        password: "password",
+        description: "i am a student",
+        currentGrade: "undefinedGrade",
+        reputation: 0
+    });
+    account.save()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+});
+
+app.get("/add-item", (req, res) => {
+    const item = new Item({
+        name: "itemName",
+        description: "itemDescription",
+        price: 0,
+        category: "generic",
+        image: "imageLink"
+    });
+    item.save()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+});
+
+app.get("/all-accounts", (req, res) => {
+    Account.find()
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get("/all-items", (req, res) => {
+    Item.find()
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get("/single-account", (req, res) => {
+    Account.findById("671d5737749935b54e3bd50e")
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get("/single-item", (req, res) => {
+    Item.findById("671d59213e178c88b7537c96")
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+
+// routes
 app.get("/", (req, res) => {
     res.sendFile("./views/index.html", { root: __dirname });
 });

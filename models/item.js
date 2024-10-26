@@ -15,6 +15,14 @@ const itemSchema = new Schema({
     price: {
         type: Number,
         require: true
+    },
+    category: {
+        type: String,
+        require: true
+    },
+    image: {
+        type: String,
+        require: true
     }
 }, { timestamps: true });
 
