@@ -1,0 +1,12 @@
+{
+  "name": "uncc-hackathon",
+  "version": "1.0.0",
+  "description": "\"# uncc-hackathon\" \r <!-- new commit hi hello -->",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Marketeers",
+  "license": "ISC"
+}
