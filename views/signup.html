@@ -1,1 +1,236 @@
-<!-- signup to create an acocunt here - you can delete this comment -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinerMarket - Sign Up</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styling -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F1F2F3;
+            color: #2B2B2B;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #006747; /* UNCC Dark Green */
+            padding: 10px 20px;
+            color: #FFFFFF;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        /* Navigation buttons styling */
+        .navbar .nav-links a {
+            margin: 0 10px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: 500;
+            border: 1px solid #C5B783; /* Border around each link */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            background-color: #C5B783; /* UNCC Gold */
+            color: #2B2B2B; /* Text color on hover */
+        }
+
+        .navbar .search-bar input[type="text"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            width: 200px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 300px;
+            background-color: #006747; /* UNCC Dark Green */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #006747;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            border-bottom: 2px solid #C5B783;
+            padding-bottom: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2B2B2B;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #C5B783;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group button {
+            background-color: #006747;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #C5B783; /* UNCC Gold */
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2B2B2B;
+            color: #FFFFFF;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #C5B783; /* Gold link color */
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+            color: #FFFFFF; /* Change color on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">NinerMarket</div>
+        <div class="nav-links">
+            <a href="localhost:3000/sell">Sell</a>
+            <a href="localhost:3000/chat">Chat</a>
+            <a href="localhost:3000/sign_up">Sign Up</a>
+            <a href="localhost:3000/account">Account</a>
+            <a href="localhost:3000/about">About</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Create Your Account</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <h2 class="section-title">Sign Up</h2>
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+        <p>Already have an account? <a href="localhost:3000/login">Log In</a></p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NinerMarket. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+
+</html>
