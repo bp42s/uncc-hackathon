@@ -27,53 +27,70 @@
         }
 
         /* Navigation Bar Styling */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #006747;
-            /* UNCC Dark Green */
-            padding: 10px 20px;
-            color: #FFFFFF;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            /* Shadow for depth */
-        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #006747; /* UNCC Dark Green */
+    padding: 10px 20px;
+    color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
 
-        .navbar .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #FFFFFF;
-        }
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
 
-        .navbar .nav-links a {
-            margin: 0 10px;
-            padding: 5px 10px;
-            text-decoration: none;
-            color: #FFFFFF;
-            font-weight: 500;
-            border: 1px solid #C5B783;
-            /* Border around each link */
-            border-radius: 5px;
-            /* Rounded corners */
-            transition: background-color 0.3s, color 0.3s;
-        }
+/* New navigation buttons styling */
+.navbar .nav-buttons {
+    display: flex; /* Align buttons horizontally */
+}
 
-        .navbar .nav-links a:hover {
-            background-color: #C5B783;
-            /* UNCC Gold */
-            color: #2B2B2B;
-        }
+.navbar .nav-buttons a {
+    margin: 0 10px; /* Spacing between buttons */
+    padding: 5px 10px; /* Padding for buttons */
+    text-decoration: none;
+    color: #FFFFFF; /* Text color */
+    font-weight: 500;
+    border: 1px solid #C5B783; /* Border around each button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Transition effects */
+}
 
-        .navbar .search-bar input[type="text"] {
-            padding: 5px;
-            border-radius: 5px;
-            border: none;
-            font-size: 1rem;
-            width: 200px;
-        }
+.navbar .nav-buttons a:hover {
+    background-color: #C5B783; /* UNCC Gold */
+    color: #2B2B2B; /* Text color on hover */
+}
 
-        /* Hero Section */
-        .hero {
+.navbar .nav-links a {
+    margin: 0 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    border: 1px solid #C5B783; /* Border around each link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #C5B783; /* UNCC Gold */
+    color: #2B2B2B; /* Text color on hover */
+}
+
+.navbar .search-bar input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    width: 200px;
+}
+
+
+       /* Hero Section */
+       .hero {
             background-image: url('https://example.com/your-banner-image.jpg');
             /* Add your image URL */
             height: 400px;
@@ -102,12 +119,14 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 2;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Darker shadow for better contrast */
+    position: relative;
+    z-index: 2;
+    background-color: rgba(198, 183, 131, 0.8); /* Gold color with slight transparency */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 10px; /* Rounded corners for the background */
         }
-
         /* Main Content Styling */
         main {
             padding: 20px;
@@ -150,12 +169,14 @@
         }
 
         .trending-title {
-            font-size: 2.5rem;
-            color: #006747;
-            /* UNCC Dark Green */
-            margin-bottom: 20px;
-            /* Space below title */
-        }
+    font-size: 2.5rem;
+    color: #006747; /* UNCC Dark Green */
+    margin-bottom: 20px; /* Space below title */
+    border-bottom: 2px solid #C5B783; /* Gold underline */
+    padding-bottom: 5px; /* Space below the title text */
+    display: inline-block; /* Make it an inline block */
+    width: 250px; /* Set a width to match the longest title */
+        }  
 
         .trending-gallery {
             display: flex;
@@ -259,20 +280,30 @@
     <div class="navbar">
         <div class="logo">NinerMarket</div>
         <div class="nav-links">
-            <a href="#">Sell</a>
-            <a href="#">Shop</a>
-            <a href="#">Read</a>
-            <a href="#">Login</a>
+            <a href="localhost:3000/sell">Sell</a>
+            <a href="localhost:3000/chat">Chat</a>
+            <a href="localhost:3000/sign_up">Sign Up</a>
+            <a href="localhost:3000/account">Account</a>
+            <a href="localhost:3000/about">About</a>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Search...">
         </div>
     </div>
 
+
     <!-- Hero Section -->
-    <div class="hero">
-        <h1>Welcome to NinerMarket</h1>
+    <div class="hero" style="position: relative; overflow: hidden;">
+        <iframe 
+            src="https://www.youtube.com/embed/PtvnjtGefiU?controls=0&showinfo=0&rel=0&autoplay=1&mute=1&loop=1&playlist=PtvnjtGefiU" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen 
+            style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); z-index: 0;"
+        ></iframe>
+        <h1 style="position: relative; z-index: 1;">Welcome to NinerMarket</h1>
     </div>
+
 
     <!-- Main Content -->
     <main>
