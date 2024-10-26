@@ -12,6 +12,14 @@ const accountSchema = new Schema({
         type: String,
         require: true
     },
+    description: {
+        type: String,
+        require: true
+    },
+    currentGrade: {
+        type: String,
+        require: true
+    },
     reputation: {
         type: Number,
         require: true
