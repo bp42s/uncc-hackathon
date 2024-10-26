@@ -9,7 +9,7 @@ const app = express();
 
 
 // attempt to connect to mdb. listening occurs here
-const dbURI = "mongodb+srv://program:program_password12345@uncc-hackathon.uvolh.mongodb.net/uncc-hackathon";
+const dbURI = "mongodb+srv://program:program_password12345@uncc-hackathon.uvolh.mongodb.net/?retryWrites=true&w=majority&appName=uncc-hackathon";
 mongoose.connect(dbURI)
     .then((result) => {
         app.listen(3000);
