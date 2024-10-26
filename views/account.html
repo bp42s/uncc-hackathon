@@ -1,1 +1,227 @@
-<!-- user account and banking info - you can delete this comment -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinerMarket - Account Details</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styling -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F1F2F3;
+            color: #2B2B2B;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #006747; /* UNCC Dark Green */
+            padding: 10px 20px;
+            color: #FFFFFF;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        .navbar .nav-links a {
+            margin: 0 10px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: 500;
+            border: 1px solid #C5B783; /* Border around each link */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            background-color: #C5B783; /* UNCC Gold */
+            color: #2B2B2B; /* Text color on hover */
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 200px;
+            background-color: #006747; /* UNCC Dark Green */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #006747;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            border-bottom: 2px solid #C5B783;
+            padding-bottom: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Profile Information Section */
+        .profile-info {
+            max-width: 600px; /* Adjusted width */
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .profile-info h2 {
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Button Styling */
+        .edit-button {
+            background-color: #006747;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+            text-align: center;
+            display: inline-block; /* Center the button */
+            margin-top: 20px;
+        }
+
+        .edit-button:hover {
+            background-color: #C5B783; /* UNCC Gold */
+        }
+
+        /* Settings and Activity Sections */
+        .settings, .activity {
+            margin-top: 30px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings h2, .activity h2 {
+            margin-bottom: 20px;
+            color: #006747;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2B2B2B;
+            color: #FFFFFF;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #C5B783; /* Gold link color */
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+            color: #FFFFFF; /* Change color on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">NinerMarket</div>
+        <div class="nav-links">
+            <a href="localhost:3000/sell">Sell</a>
+            <a href="localhost:3000/chat">Chat</a>
+            <a href="localhost:3000/sign_up">Sign Up</a>
+            <a href="localhost:3000/account">Account</a>
+            <a href="localhost:3000/about">About</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Your Account Details</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <h2 class="section-title">Profile Information</h2>
+        <div class="profile-info">
+            <h2>John Doe</h2>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <p><strong>Joined:</strong> January 1, 2023</p>
+            <button class="edit-button">Edit Profile</button>
+        </div>
+
+        <div class="settings">
+            <h2>Account Settings</h2>
+            <p><strong>Privacy Settings:</strong> Public</p>
+            <p><strong>Notification Preferences:</strong> Email and SMS</p>
+            <p><strong>Two-Factor Authentication:</strong> Enabled</p>
+            <button class="edit-button">Edit Settings</button>
+        </div>
+
+        <div class="activity">
+            <h2>Recent Activity</h2>
+            <p>You sold <strong>Item A</strong> on October 10, 2024.</p>
+            <p>You bought <strong>Item B</strong> on October 5, 2024.</p>
+            <p>You listed <strong>Item C</strong> for sale on September 30, 2024.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NinerMarket. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+
+</html>
