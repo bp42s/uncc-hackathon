@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     // we evaluate which piece of html content we should send to the browser
     let path = "./views/";
     switch (req.url) {
-        case "/":
+        case "/":   // index - homepage
             path += "index.html";
             res.statusCode = 200;   // status: success
             break;
@@ -21,12 +21,27 @@ const server = http.createServer((req, res) => {
             path += "about.html";
             res.statusCode = 200;   // status: success
             break;
-        case "/about-me":   // redirect case
-            res.statusCode = 301;   // status: redirection
-            res.setHeader("Location", "/about");
-            res.end();
+        case "/account":
+            path += "account.html";
+            res.statusCode = 200;   // status: success
             break;
-        default:
+        case "/chat":
+            path += "chat.html";
+            res.statusCode = 200;   // status: success
+            break;
+        case "/sell":
+            path += "sell.html";
+            res.statusCode = 200;   // status: success
+            break;
+        case "/shop":
+            path += "shop.html";
+            res.statusCode = 200;   // status: success
+            break;
+        case "/signup":
+            path += "signup.html";
+            res.statusCode = 200;   // status: success
+            break;
+        default:    // 404 - invalid address
             path += "404.html";
             res.statusCode = 404    // status: not found
             break;
