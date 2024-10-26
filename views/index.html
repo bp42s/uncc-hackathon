@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
             font-family: 'Roboto', sans-serif;
             background-color: #F1F2F3;
             color: #2B2B2B;
+            line-height: 1.6;
         }
 
         /* Navigation Bar Styling */
@@ -29,9 +31,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #006747; /* UNCC Dark Green */
+            background-color: #006747;
+            /* UNCC Dark Green */
             padding: 10px 20px;
             color: #FFFFFF;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Shadow for depth */
         }
 
         .navbar .logo {
@@ -46,13 +51,16 @@
             text-decoration: none;
             color: #FFFFFF;
             font-weight: 500;
-            border: 1px solid #C5B783; /* Border around each link */
-            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #C5B783;
+            /* Border around each link */
+            border-radius: 5px;
+            /* Rounded corners */
             transition: background-color 0.3s, color 0.3s;
         }
 
         .navbar .nav-links a:hover {
-            background-color: #C5B783; /* UNCC Gold */
+            background-color: #C5B783;
+            /* UNCC Gold */
             color: #2B2B2B;
         }
 
@@ -64,6 +72,42 @@
             width: 200px;
         }
 
+        /* Hero Section */
+        .hero {
+            background-image: url('https://example.com/your-banner-image.jpg');
+            /* Add your image URL */
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
         /* Main Content Styling */
         main {
             padding: 20px;
@@ -72,8 +116,78 @@
 
         .section-title {
             color: #006747;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-top: 20px;
+            border-bottom: 2px solid #C5B783;
+            /* Underline for section titles */
+            padding-bottom: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Welcome Message Styling */
+        .welcome-message {
+            font-size: 3rem;
+            /* Large font size */
+            font-weight: bold;
+            color: #FFFFFF;
+            /* White text */
+            background-color: #C5B783;
+            /* Gold background */
+            padding: 20px;
+            border-radius: 10px;
+            /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            /* Subtle shadow */
+            margin-bottom: 30px;
+            /* Space below */
+        }
+
+        /* Trending Section Styling */
+        .trending-section {
+            margin-bottom: 40px;
+            /* Space below section */
+        }
+
+        .trending-title {
+            font-size: 2.5rem;
+            color: #006747;
+            /* UNCC Dark Green */
+            margin-bottom: 20px;
+            /* Space below title */
+        }
+
+        .trending-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 0 20px;
+            /* Add padding for better layout */
+        }
+
+        .trending-item {
+            width: 220px;
+            height: 300px;
+            background-color: #C5B783;
+            /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #FFFFFF;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 2px solid #006747;
+            /* Border for gallery items */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .trending-item:hover {
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Add shadow effect */
         }
 
         /* Product Gallery Styling */
@@ -83,12 +197,15 @@
             justify-content: center;
             gap: 15px;
             margin-top: 10px;
+            padding: 0 20px;
+            /* Add padding for better layout */
         }
 
         .gallery-item {
-            width: 180px;
-            height: 250px;
-            background-color: #C5B783; /* Placeholder color */
+            width: 220px;
+            height: 300px;
+            background-color: #C5B783;
+            /* Placeholder color */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,27 +213,42 @@
             color: #FFFFFF;
             border-radius: 10px;
             font-weight: bold;
-            border: 2px solid #006747; /* Border for gallery items */
-            transition: transform 0.3s;
+            border: 2px solid #006747;
+            /* Border for gallery items */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05); /* Slightly enlarge on hover */
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Add shadow effect */
         }
 
         /* Footer Styling */
         footer {
             background-color: #2B2B2B;
             color: #FFFFFF;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 20px;
+            /* Space above footer */
         }
 
         footer p {
             font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #C5B783;
+            /* Gold link color */
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+            color: #FFFFFF;
+            /* Change color on hover */
         }
     </style>
 </head>
@@ -137,15 +269,23 @@
         </div>
     </div>
 
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to NinerMarket</h1>
+    </div>
+
     <!-- Main Content -->
     <main>
-        <h2 class="section-title">Trending</h2>
-        <div class="gallery">
-            <div class="gallery-item">Trending 1</div>
-            <div class="gallery-item">Trending 2</div>
-            <div class="gallery-item">Trending 3</div>
-            <div class="gallery-item">Trending 4</div>
-            <div class="gallery-item">Trending 5</div>
+
+        <div class="trending-section">
+            <h2 class="trending-title">Trending</h2>
+            <div class="trending-gallery">
+                <div class="trending-item">Trending 1</div>
+                <div class="trending-item">Trending 2</div>
+                <div class="trending-item">Trending 3</div>
+                <div class="trending-item">Trending 4</div>
+                <div class="trending-item">Trending 5</div>
+            </div>
         </div>
 
         <h2 class="section-title">Men's Clothing</h2>
@@ -165,12 +305,24 @@
             <div class="gallery-item">Photo 4</div>
             <div class="gallery-item">Photo 5</div>
         </div>
+
+        <h2 class="section-title">Accessories</h2>
+        <div class="gallery">
+            <div class="gallery-item">Photo 1</div>
+            <div class="gallery-item">Photo 2</div>
+            <div class="gallery-item">Photo 3</div>
+            <div class="gallery-item">Photo 4</div>
+            <div class="gallery-item">Photo 5</div>
+        </div>
+
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 University of North Carolina at Charlotte. All rights reserved.</p>
+        <p>&copy; 2024 NinerMarket. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
 </body>
+
 </html>
